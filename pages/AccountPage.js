@@ -1,17 +1,22 @@
 class AccountPage {
-  constructor(page) {
-    this.page = page;
-    this.welcomeMessage = page.locator('h1');
-    this.logoutLink = page.locator('a[href="/parabank/logout.htm"]');
-  }
 
-  async isVisible() {
-    return await this.welcomeMessage.isVisible();
-  }
+    constructor(page){
 
-  async logout() {
-    await this.logoutLink.click();
-  }
+        this.page = page;
+
+        this.balance =
+        page.locator("#accountTable tbody tr:first-child td:nth-child(2)");
+    }
+
+    async printBalance(){
+
+        const amount =
+        await this.balance.textContent();
+
+        console.log("================================");
+        console.log("ACCOUNT BALANCE : " + amount);
+        console.log("================================");
+    }
 }
 
 module.exports = AccountPage;
