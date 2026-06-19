@@ -1,6 +1,9 @@
-Feature: Signup
+Feature: User Registration
 
-  Scenario: User can register a new account
-    Given the user is on the registration page
-    When the user submits valid registration details
-    Then the user account should be created successfully
+Scenario: Register new user successfully
+
+Given User launches parabank application
+When User navigates to registration page
+And User enters registration details
+And User submits registration form
+Then User account should be created successfully

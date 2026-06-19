@@ -1,6 +1,8 @@
-Feature: Login
+Feature: Login functionality
 
-  Scenario: User can log in with valid credentials
-    Given the user is on the login page
-    When the user submits valid login credentials
-    Then the user should be redirected to the account overview page
+Scenario: Login using newly created account
+
+Given User has a registered account
+When User enters valid login credentials
+Then User should login successfully
+And User balance should be displayed
