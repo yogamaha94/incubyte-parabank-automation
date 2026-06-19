@@ -8,6 +8,10 @@ require: [
 
 format: [
 'progress'
-]
+],
+
+timeout: 60000,
+publish: false,
+parallel: 1
 }
 };
